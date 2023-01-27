@@ -35,7 +35,7 @@ def colab_pdf(file_name, notebookpath="/content/drive/MyDrive/Colab Notebooks/")
     # Attempt to convert to pdf and save it in Gdrive home dir using jupyter nbconvert command.
     try:
         get_ipython().system(
-            "jupyter nbconvert --output-dir='$gdrive_home' '$notebookpath''$file_name' --to pdf"
+            f"jupyter nbconvert --output-dir={gdrive_home} {notebookpath}{file_name} --to pdf"
         )
     except:
         return "nbconvert error"
